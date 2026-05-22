@@ -436,14 +436,14 @@ public class Main {
 // yeni daha spesifik məlumat əlavə edir (tədqiqat mövzusu)
 // yeni versiya yazdım daha aydın olsun deyə
 
-package com.example;
+
 
 import java.util.Scanner;
 
 // Abstrakt sinif (Abstraction)
 // Bu sinif birbaşa obyekt yaratmaq üçün deyil,
 // digər siniflər üçün baza rolunu oynayır
-abstract class Student {
+//abstract class Student {
 
     // Encapsulation (İnkapsulyasiya)
     // name dəyişəni private-dir — yalnız bu sinif daxilində əlçatandır
@@ -558,8 +558,6 @@ public class Main {
 //-------------------------------------------------------------------------------------------
 
 //Abstract class Student
-
-package com.example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -1092,7 +1090,6 @@ public class Main {
 
 /////////////////////////////////////
 /////////////////////////////////////
-package java;
 
 import java.util.ArrayList;
 import java.util.List;
