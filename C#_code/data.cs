@@ -1,3 +1,181 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<Shexs> shexsler = new List<Shexs>();
+    static int say;
+
+    static void Main(string[] args)
+    {
+        NeceneferDaxilEdilmesi();
+        MelumatlarDaxilEdilmesi();
+
+        Console.WriteLine("\n--- Məlumatlar ---");
+        foreach (var s in shexsler)
+        {
+            s.Print();
+        }
+    }
+
+    static void NeceneferDaxilEdilmesi()
+    {
+        Console.Write("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz: ");
+        while (!int.TryParse(Console.ReadLine(), out say) || say <= 0)
+        {
+            Console.Write("Yenidən düzgün bir ədəd daxil edin: ");
+        }
+    }
+
+    static void MelumatlarDaxilEdilmesi()
+    {
+        for (int i = 0; i < say; i++)
+        {
+            Console.WriteLine($"\n-- {i + 1}-ci nəfər --");
+            var shexs = new Shexs();
+
+            // Ad
+            while (true)
+            {
+                Console.Write("Ad daxil edin: ");
+                string deger = Console.ReadLine();
+                if (!string.IsNullOrEmpty(deger) && char.IsLetter(deger[0]))
+                {
+                    shexs.Ad = deger;
+                    break;
+                }
+                Console.WriteLine("Məlumatı düzgün daxil edin.");
+            }
+
+            // Ata adı
+            while (true)
+            {
+                Console.Write("Ata adını daxil edin: ");
+                string deger = Console.ReadLine();
+                if (!string.IsNullOrEmpty(deger) && char.IsLetter(deger[0]))
+                {
+                    shexs.AtaAdi = deger;
+                    break;
+                }
+                Console.WriteLine("Məlumatı düzgün daxil edin.");
+            }
+
+            // Email
+            while (true)
+            {
+                Console.Write("E-poçt ünvanını daxil edin: ");
+                string deger = Console.ReadLine();
+                if (!string.IsNullOrEmpty(deger) && deger.Contains("@") && deger.Contains("."))
+                {
+                    shexs.Email = deger;
+                    break;
+                }
+                Console.WriteLine("Düzgün e-poçt ünvanı daxil edin.");
+            }
+
+            // Telefon
+            while (true)
+            {
+                Console.Write("Telefon nömrəsini daxil edin (10 rəqəm): ");
+                string deger = Console.ReadLine();
+                if (deger.Length == 10 && long.TryParse(deger, out long tel))
+                {
+                    shexs.Telefon = tel;
+                    break;
+                }
+                Console.WriteLine("Məlumatı düzgün daxil edin.");
+            }
+
+            // Yaş
+            while (true)
+            {
+                Console.Write("Yaşı daxil edin: ");
+                if (int.TryParse(Console.ReadLine(), out int yas) && yas > 0)
+                {
+                    shexs.Yas = yas;
+                    break;
+                }
+                Console.WriteLine("Yaşı düzgün daxil edin.");
+            }
+
+            shexsler.Add(shexs);
+        }
+    }
+}
+
+class Shexs
+{
+    private string _ad;
+    private string _ataAdi;
+    private string _email;
+    private long _telefon;
+    private int _yas;
+
+    public string Ad
+    {
+        get { return _ad; }
+        set
+        {
+            if (!string.IsNullOrEmpty(value) && char.IsLetter(value[0]))
+                _ad = value;
+            else
+                throw new ArgumentException("Ad düzgün deyil.");
+        }
+    }
+
+    public string AtaAdi
+    {
+        get { return _ataAdi; }
+        set
+        {
+            if (!string.IsNullOrEmpty(value) && char.IsLetter(value[0]))
+                _ataAdi = value;
+            else
+                throw new ArgumentException("Ata adı düzgün deyil.");
+        }
+    }
+
+    public string Email
+    {
+        get { return _email; }
+        set
+        {
+            if (!string.IsNullOrEmpty(value) && value.Contains("@") && value.Contains("."))
+                _email = value;
+            else
+                throw new ArgumentException("Email düzgün deyil.");
+        }
+    }
+
+    public long Telefon
+    {
+        get { return _telefon; }
+        set
+        {
+            if (value.ToString().Length == 10)
+                _telefon = value;
+            else
+                throw new ArgumentException("Telefon nömrəsi düzgün deyil.");
+        }
+    }
+
+    public int Yas
+    {
+        get { return _yas; }
+        set
+        {
+            if (value > 0)
+                _yas = value;
+            else
+                throw new ArgumentException("Yaş düzgün deyil.");
+        }
+    }
+
+    public void Print()
+    {
+        Console.WriteLine($"Ad: {Ad}, Ata adı: {AtaAdi}, Email: {Email}, Telefon: {Telefon}, Yaş: {Yas}");
+    }
+}
 //-------------------------------------------------------------------------------------------------------------------
 
 using System;
