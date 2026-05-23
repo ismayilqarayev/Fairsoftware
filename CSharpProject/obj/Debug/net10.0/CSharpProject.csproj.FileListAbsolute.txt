@@ -1,0 +1,15 @@
+c:\Users\user\Documents\GitHub\Java\CSharpProject\bin\Debug\net10.0\CSharpProject.exe
+c:\Users\user\Documents\GitHub\Java\CSharpProject\bin\Debug\net10.0\CSharpProject.deps.json
+c:\Users\user\Documents\GitHub\Java\CSharpProject\bin\Debug\net10.0\CSharpProject.runtimeconfig.json
+c:\Users\user\Documents\GitHub\Java\CSharpProject\bin\Debug\net10.0\CSharpProject.dll
+c:\Users\user\Documents\GitHub\Java\CSharpProject\bin\Debug\net10.0\CSharpProject.pdb
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.AssemblyInfoInputs.cache
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.AssemblyInfo.cs
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.csproj.CoreCompileInputs.cache
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.sourcelink.json
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.dll
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\refint\CSharpProject.dll
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.pdb
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\CSharpProject.genruntimeconfig.cache
+c:\Users\user\Documents\GitHub\Java\CSharpProject\obj\Debug\net10.0\ref\CSharpProject.dll
