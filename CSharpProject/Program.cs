@@ -30,6 +30,8 @@ class Program
 
             while(true)
             {
+                Console.Write("Ad: daxil edin: ");
+                shexs.Ad = Console.ReadLine();
                 
             }
         }
