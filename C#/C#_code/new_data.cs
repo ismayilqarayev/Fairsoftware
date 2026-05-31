@@ -185,3 +185,169 @@ class Shexs
         Console.WriteLine($"Ad: {Ad}, Ata adı: {AtaAdi}, Email: {Email}, Telefon: {Telefon}, Yaş: {Yas}");
     }
 }
+
+
+                                                                
+//----------------------------------------------------------------
+// Bu proqram istifadəçidən bir neçə şəxsin məlumatlarını daxil etməsini tələb edir və sonra həmin məlumatları ekrana çap edir. Hər bir məlumat daxil edilərkən müəyyən doğrulamalar aparılır, məsələn, ad və ata adı hərf ilə başlamalıdır, email ünvanı "@" və "." içermelidir, telefon nömrəsi 10 rəqəmli olmalıdır və yaş müsbət bir tam ədəd olmalıdır.
+// date 31.05.2026
+// 11:15 PM
+
+using System;
+using System.Collections.Generic;
+
+// =====================================================
+//  Şəxs sinifi — bir nəfərin bütün məlumatı bir yerdə
+// =====================================================
+class Şəxs
+{
+    public string Ad         { get; set; }
+    public string AtaAdı     { get; set; }
+    public string Email      { get; set; }
+    public long   Telefon    { get; set; }
+    public int    Yaş        { get; set; }
+
+    // Konstruktor
+    public Şəxs(string ad, string ataAdı, string email, long telefon, int yaş)
+    {
+        Ad      = ad;
+        AtaAdı  = ataAdı;
+        Email   = email;
+        Telefon = telefon;
+        Yaş     = yaş;
+    }
+
+    // Məlumatı çap et
+    public void Göstər()
+    {
+        Console.WriteLine($"Ad: {Ad}, Ata adı: {AtaAdı}, " +
+                          $"Email: {Email}, Telefon: {Telefon}, Yaş: {Yaş}");
+    }
+}
+
+// =====================================================
+//  Reyestr sinifi — siyahını idarə edir
+// =====================================================
+class Reyestr
+{
+    private List<Şəxs> şəxslər = new List<Şəxs>();
+
+    // Yeni şəxs əlavə et
+    public void ƏlavəEt(Şəxs ş)
+    {
+        şəxslər.Add(ş);
+    }
+
+    // Hamısını göstər
+    public void HamısınıGöstər()
+    {
+        if (şəxslər.Count == 0)
+        {
+            Console.WriteLine("Siyahı boşdur.");
+            return;
+        }
+
+        Console.WriteLine("\n===== Şəxslər Siyahısı =====");
+        for (int i = 0; i < şəxslər.Count; i++)
+        {
+            Console.Write($"{i + 1}. ");
+            şəxslər[i].Göstər();
+        }
+    }
+}
+
+// =====================================================
+//  Giriş sinifi — istifadəçidən məlumat oxuyur
+// =====================================================
+class Giriş
+{
+    // Yalnız hərf ilə başlayan ad oxu
+    public static string AdOxu(string mesaj)
+    {
+        while (true)
+        {
+            Console.Write(mesaj);
+            string dəyər = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(dəyər) && char.IsLetter(dəyər[0]))
+                return dəyər;
+
+            Console.WriteLine("⚠  Düzgün ad daxil edin.");
+        }
+    }
+
+    // Düzgün email oxu
+    public static string EmailOxu(string mesaj)
+    {
+        while (true)
+        {
+            Console.Write(mesaj);
+            string dəyər = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(dəyər) &&
+                dəyər.Contains("@") && dəyər.Contains("."))
+                return dəyər;
+
+            Console.WriteLine("⚠  Düzgün e-poçt daxil edin (@ və . olmalıdır).");
+        }
+    }
+
+    // 10 rəqəmli telefon oxu
+    public static long TelefonOxu(string mesaj)
+    {
+        while (true)
+        {
+            Console.Write(mesaj);
+            string dəyər = Console.ReadLine();
+
+            if (dəyər.Length == 10 && long.TryParse(dəyər, out long telefon))
+                return telefon;
+
+            Console.WriteLine("⚠  Telefon 10 rəqəmli olmalıdır.");
+        }
+    }
+
+    // Müsbət tam ədəd oxu
+    public static int TamSayOxu(string mesaj)
+    {
+        while (true)
+        {
+            Console.Write(mesaj);
+
+            if (int.TryParse(Console.ReadLine(), out int dəyər) && dəyər > 0)
+                return dəyər;
+
+            Console.WriteLine("⚠  Düzgün müsbət ədəd daxil edin.");
+        }
+    }
+}
+
+// =====================================================
+//  Main
+// =====================================================
+class Program
+{
+    static void Main(string[] args)
+    {
+        Reyestr reyestr = new Reyestr();
+
+        int say = Giriş.TamSayOxu("Neçə nəfər üçün məlumat daxil etmək istəyirsiniz? ");
+
+        for (int i = 0; i < say; i++)
+        {
+            Console.WriteLine($"\n--- {i + 1}-ci şəxs ---");
+
+            string ad      = Giriş.AdOxu    ("Ad:       ");
+            string ataAdı  = Giriş.AdOxu    ("Ata adı:  ");
+            string email   = Giriş.EmailOxu ("E-poçt:   ");
+            long   telefon = Giriş.TelefonOxu("Telefon:  ");
+            int    yaş     = Giriş.TamSayOxu ("Yaş:      ");
+
+            // Bir şəxs — bir obyekt
+            Şəxs ş = new Şəxs(ad, ataAdı, email, telefon, yaş);
+            reyestr.ƏlavəEt(ş);
+        }
+
+        reyestr.HamısınıGöstər();
+    }
+}
