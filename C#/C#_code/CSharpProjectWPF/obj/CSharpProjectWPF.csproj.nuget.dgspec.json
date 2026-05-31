@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj": {}
+    "C:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj": {}
   },
   "projects": {
-    "c:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj": {
+    "C:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj",
         "projectName": "CSharpProjectWPF",
-        "projectPath": "c:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj",
+        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\CSharpProjectWPF.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\obj\\",
+        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\Java\\C#\\C#_code\\CSharpProjectWPF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
