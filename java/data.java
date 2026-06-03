@@ -436,8 +436,6 @@ public class Main {
 // yeni daha spesifik məlumat əlavə edir (tədqiqat mövzusu)
 // yeni versiya yazdım daha aydın olsun deyə
 
-
-
 import java.util.Scanner;
 
 // Abstrakt sinif (Abstraction)
