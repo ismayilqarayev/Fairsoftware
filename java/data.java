@@ -577,9 +577,17 @@ abstract class Sexs {
         this.yas = yas;
     }
 
-    public String getAd() { return ad; }
-    public String getSoyad() { return soyad; }
-    public int getYas() { return yas; }
+    public String getAd() {
+         return ad; 
+        }
+        
+    public String getSoyad() {
+         return soyad; 
+        }
+
+    public int getYas() {
+         return yas;
+        }
 
     public abstract void melumatlariGoster();
 }
