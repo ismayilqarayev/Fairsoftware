@@ -7,6 +7,18 @@
             "command": "New-Item -ItemType Directory -Force -Path '${workspaceFolder}/Test/demo/target/classes' | Out-Null; & 'C:/Program Files/Eclipse Adoptium/jdk-11.0.30.7-hotspot/bin/javac.exe' -d '${workspaceFolder}/Test/demo/target/classes' '${workspaceFolder}/Test/demo/src/main/java/com/example/App.java'",
             "group": "build",
             "problemMatcher": ["$javac"]
+        },
+        {
+            "label": "compile student-portal",
+            "type": "shell",
+            "command": "& '${workspaceFolder}/student-portal/mvnw.cmd' -f '${workspaceFolder}/student-portal/pom.xml' -q compile",
+            "options": {
+                "env": {
+                    "JAVA_HOME": "C:/Program Files/Eclipse Adoptium/jdk-17.0.18.8-hotspot"
+                }
+            },
+            "group": "build",
+            "problemMatcher": ["$javac"]
         }
     ]
 }

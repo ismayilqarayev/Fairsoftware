@@ -34,7 +34,8 @@
             "name": "StudentPortalApplication",
             "request": "launch",
             "mainClass": "com.school.StudentPortalApplication",
-            "projectName": "student-portal"
+            "projectName": "student-portal",
+            "preLaunchTask": "compile student-portal"
         }
     ]
 }
